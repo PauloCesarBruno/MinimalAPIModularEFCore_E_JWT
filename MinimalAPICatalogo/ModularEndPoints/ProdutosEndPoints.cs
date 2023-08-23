@@ -5,7 +5,7 @@ using MinimalAPICatalogo.Models;
 
 namespace MinimalAPICatalogo.ModularEndPoints
 {
-    // Método de extenssão WebApplication
+    // Método de extenssão WebApplication.
     public static class ProdutosEndPoints
     {
         public static void MapProdutosEndPoints(this WebApplication app)

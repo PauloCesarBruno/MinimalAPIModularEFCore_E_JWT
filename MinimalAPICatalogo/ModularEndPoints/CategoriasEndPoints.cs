@@ -16,7 +16,7 @@ namespace MinimalAPICatalogo.ModularEndPoints
                 context.Categorias.Add(categoria);
                 await context.SaveChangesAsync();
                 return Results.Created($"/categorias/{categoria.CategoriaId}", categoria);
-            });
+            });                       
 
             //await context.Categorias.ToListAsync()).RequireAuthorization(); -> OUTRA FORMA DE IMPEDIR SEM USAR [Authorize].
             app.MapGet("/Categorias", [Authorize] async (AppDbContext context) =>
@@ -30,7 +30,6 @@ namespace MinimalAPICatalogo.ModularEndPoints
                         : Results.NotFound();
 
             });
-
 
             app.MapPut("/Categorias/{id:int}", [Authorize] async (int id, Categoria categoria, AppDbContext context) =>
             {
